@@ -11,3 +11,10 @@
     - name: Show uptime output
       ansible.builtin.debug:
         var: uptime_result.stdout
+    - name: df
+      command: "df -h"
+      register: df
+    - name: output of df
+      ansible_builtin.debug:
+        var: df.stdout
+      

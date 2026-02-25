@@ -21,7 +21,7 @@
       lineinfile:
         path: /etc/selinux/config
         regexp: '^SELINUX='
-        line: 'SELINUX=enforcing'
+        line: 'SELINUX=permissive'
     - name: see file
       command: 'cat /etc/selinux/config'
       register: out

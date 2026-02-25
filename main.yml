@@ -25,6 +25,7 @@
     - name: see file
       command: 'cat /etc/selinux/config'
       register: out
+      changed_when: false
     - name: debug config out
       debug:
         var: out.stdout_lines

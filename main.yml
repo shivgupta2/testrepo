@@ -24,3 +24,8 @@
         line: 'SELINUX=enforcing'
     - name: see file
       command: 'cat /etc/selinux/config'
+      register: out
+    - name: debug config out
+      debug:
+        var: out.stdout
+      

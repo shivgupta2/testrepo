@@ -17,4 +17,10 @@
     - name: output of df
       ansible.builtin.debug:
         var: df.stdout
-      
+    - name: touch file
+      lineinfile:
+        path: /etc/selinux/config
+        regexp: '^SELINUX='
+        line: 'SELINUX=enforcing'
+    - name: see file
+      command: 'cat /etc/selinux/config'
